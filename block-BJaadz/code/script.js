@@ -17,22 +17,22 @@ let allHrsArray = Array.from(allHrs)
 */
 let allHrsArray=Array.from(allHrs);
 // Set the border of the all the hr elements to "1px solid tomato"
-allHrsArray.forEach(ele=>ele.style.border='1px solid tomoto')
+allHrsArray.forEach(ele=>ele.style.border='1px solid tomato');
 // Change the background of all the hr to "antiquewhite" using for of loop.
 for(let ele of allHrsArray){
   ele=ele.style.backgroundColor='antiquewhite';
 }
 // Change the 'border-radius' of all the hr to "5px" using array.
-allHrsArray.forEach(ele=>ele.style.border='5px');
+// allHrsArray.forEach(ele=>ele.style.borderRadius='5px');
 // Change the alignment of the heading(h1) to center.
 heading.style.textAlign='center';
 // Change the font size of the heading to 3rem.
 heading.style.fontSize='3rem';
 // Change the border of hr with class 'image' to `2px solid purple`.
-let img= document.querySelectorAll('.image').forEach(ele=>ele.style.border='2px solid purple');
+let img= document.querySelectorAll('hr.image').forEach(ele=>ele.style.border='2px solid purple');
 
 // Hide the box number 17 (last box).
-document.querySelector('.seventeen').remove()
+document.querySelector('.seventeen').style.display='none'
 // Change the border of all the hr element from solid to dashed type
 allHrsArray.forEach(ele=>ele.style.border='dashed')
 // Create a pragraph element and store it in variable named 'para' using `createElement`
@@ -40,8 +40,8 @@ let para=document.createElement('p');
 // Change the inner text of para to "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure."
 para.innerText='querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure.';
 // Remove all the elements from box 1
-document.querySelector('.one').children[0].remove();
-document.querySelector('.one').children[0].remove();
+let box1=document.querySelector('.one');
+box1.innerHTML="";
 // Replace all the elements inside box 1 with the para (you created above)
 document.querySelector('.one').append(para);
 /* Walking the DOM
@@ -90,7 +90,7 @@ let p2=document.createElement('p');
 p2.innerText="Prepend inserts as first child";
 box2.prepend(p2);
 // Change the border of box 4 to '1px solid black'
-document.querySelector('.four').style.border='px solid black';
+document.querySelector('.four').style.border='1px solid black';
 // Change the border radius of box 5 to 10px.
 document.querySelector('.five').style.borderRadius='10px';
 // Change the text color of box 6 to black.
@@ -135,9 +135,8 @@ imgElm.setAttribute('src','https://images.unsplash.com/photo-1592500595497-d1f52
 // Select the box 7 using class seven
 let box7= document.querySelector('.seven');
 // Remove all the elements form box seven
-box7.children[0].remove()
-box7.children[0].remove()
-box7.children[0].remove()
+box7.innerHTML="";
+
 // Append the imgElm to the box no 7
 box7.append(imgElm);
 // Change the width and height of the image to `100%`
@@ -161,3 +160,10 @@ a1.href=`https://altcampus.school`;
 a2.href=`https://google.com`;
 // Append both the elements to box 5 you selected above.
 box5.append(a1,a2);
+
+
+
+
+
+
+
