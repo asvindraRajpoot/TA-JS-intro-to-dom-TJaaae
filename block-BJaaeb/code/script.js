@@ -11,7 +11,7 @@ function createInputElm(label,type='text'){
    let input= document.createElement('input');
    input.type=type;
    let lab=document.createElement('label');
-   lab.innerText=label+':';
+   lab.innerText=label;
    lab.append(input);
  
  return lab;
@@ -27,13 +27,9 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 
 
 function createInputElm(ele,type='text'){
-  let input= document.createElement('input');
-  input.type=type;
-  let elem=document.createElement('label');
-  elem.innerText=`${ele} :`
-  elem.append(input);
+let elm=`<label>${ele} <input type="${type}"></label>`
 
-return elem;
+return elm;
 }
 
 // // TEST
@@ -73,32 +69,23 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 
 // Your code goes here
 function createTodoList(arr){
-let rtn =[];
-arr.forEach((element,index) => {
-  let ul=document.createElement('ul');
-let p=document.createElement('p');
-  p.innerText=arr[index].name;
-let input=document.createElement('input');
-input.type='checkbox';
-if(arr[index].isDone){
-    input.setAttribute('checked',true);
-  }
-  input.setAttribute('name',"");
-input.setAttribute('id',"");
-let span=document.createElement('span');
-span.innerText='X';
-let li=document.createElement('li');
-li.append(p,input,span);
-ul.append(li);
-rtn.push(ul);
-});
+  let html=`<ul> ${arr.map((todo)=>
+  `<li>
+   <p>${todo.name}</p>
+   <input type='checkbox' ${todo.isDone?"checked":""} name="",id="">
+   <span>X</span>
+   </li>`
+  ).join("")}
+  </ul>`;
+  return html;
+
+}
 
 
 
 
  
- return rtn;
-}
+
 
 // TEST
 createTodoList([
