@@ -6,16 +6,36 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-gap: 1rem;
+  margin: 0 auto; */
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
 }
 .box {
   border: 2px solid #d6bcfa;
   height: 500px;
   border-radius: 10px;
+ // border: 2px blue;
+}
+main{
+  background-color: #F4F5F9;
+  
 }
 h1,
 h2 {
   text-align: center;
+}
+
+header{
+  background-color: #4075D5;
+  padding: 1rem;
+  color: white;
+  box-shadow: 0 0 0 0 aliceblue;
 }
